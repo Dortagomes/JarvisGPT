@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+
+
+  <main>
+    <div class="sidebar"></div>
+    <section class="chat">
+      <img src="img/senai-ai.png" alt="Jarvis">
+      <h1>SENAI GPT</h1>
+
+      <div class="pergunta">
+        <input type="text" name="prompt" id="prompt" placeholder="Pergunte algo...">
+
+        <button> <i class="fas fa-microphone"></i></button>
+
+      </div>
+
+      <img src="img/senai_logo.png" alt="LOGO SENAI">
+
+    </section>
+
+    <button id="dark-mode-button" class="fixed bottom-right">
+      <i class="fas fa-moon"></i>
+    </button>
+  </main>
+
+  <script src="index.js"></script>
+  <script>
+    const darkModeButton = document.getElementById("dark-mode-button");
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+
+      // Altera o ícone do botão de acordo com o modo de exibição
+      if (document.body.classList.contains("dark-mode")) {
+        darkModeButton.innerHTML = "<i class='fas fa-sun'></i>";
+      } else {
+        darkModeButton.innerHTML = "<i class='fas fa-moon'></i>";
+      }
+    }
+
+    darkModeButton.addEventListener("click", toggleDarkMode);
+
+    // Adiciona um atalho de teclado para ativar o modo dark
+    document.addEventListener("keydown", function (event) {
+      if (event.ctrlKey && event.shiftKey && event.keyCode === 68) {
+        toggleDarkMode();
+      }
+    });
+  </script>
+</body>
+</html>
